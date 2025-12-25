@@ -3,7 +3,7 @@ import {
   getRandomNumber,
   getRandomEl,
   getRandomArr,
-  getRandomCoor
+  getRandomCoor,
 } from './util.js'
 
 import {
@@ -15,12 +15,10 @@ import {
   photos
 } from './data.js'
 
-export {Announcement}
-
-function Announcement() {
+export function Announcement() {
   this.author = {
     avatar: chooseRandomAvatar()
-  },
+  }
 
   this.location = {
     x: getRandomCoor(35.65000, 35.70000),
@@ -29,13 +27,13 @@ function Announcement() {
 
   this.offer = {
     title: getRandomEl(titles),
-    adress: `${this.location.x}, ${this.location.y}`,
+    address: `${this.location.x}, ${this.location.y}`,
     price:  getRandomNumber(1, 1000000),
     type: getRandomEl(types),
     rooms: getRandomNumber(1, 10),
     guests: getRandomNumber(1, 20),
     checkin: getRandomEl(checkTimes),
-    checout: getRandomEl(checkTimes),
+    checkout: getRandomEl(checkTimes),
     features: getRandomArr(features),
     description: getRandomEl(descriptions),
     photos: getRandomArr(photos),

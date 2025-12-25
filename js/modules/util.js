@@ -1,29 +1,23 @@
-export {
-  chooseRandomAvatar,
-  getRandomNumber,
-  getRandomEl,
-  getRandomArr,
-  getRandomCoor
-}
+const avatarsQuantity = 8
 
-function chooseRandomAvatar () {
-  let num = Math.floor(Math.random() * 8) + 1
+export function chooseRandomAvatar () {
+  let num = Math.floor(Math.random() * avatarsQuantity) + 1
   num = '0' + num
   const avatar = `img/avatars/user${num}.png`
   return avatar
 }
 
-function getRandomNumber(min, max) {
+export function getRandomNumber(min, max) {
   const num = Math.floor(Math.random() * (max - min + 1) + min)
   return num
 }
 
-function getRandomEl (arr) {
+export function getRandomEl (arr) {
   const randomEl = arr[getRandomNumber(0, arr.length - 1)]
   return randomEl
 }
 
-function getRandomArr(arr) {
+export function getRandomArr(arr) {
   const randomArr = arr.slice()
 
   const count = Math.floor(Math.random() * randomArr.length) + 1
@@ -36,9 +30,12 @@ function getRandomArr(arr) {
   return randomArr.slice(0, count)
 }
 
-function getRandomCoor (min, max, digits = 5) {
+export function getRandomCoor (min, max, digits = 5) {
   const randomCoor = Number((Math.random() * (max - min) + min).toFixed(digits))
   return randomCoor
 }
 
-
+export function getRandomCard (arr) {
+  const randomCard = arr[getRandomNumber(0, arr.length - 1)]
+  return randomCard
+}
